@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wq</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
     <link rel="stylesheet" href="style.css">
 </head>
@@ -25,6 +24,19 @@
         </div>
 
     </div>
+    <script type='text/javascript'>
+        title = "Welcome      ";
+        position = 0;
+
+        function scrolltitle() {
+            document.title = title.substring(position, title.length) + title.substring(0, position);
+            position++;
+            if (position > title.length) position = 0;
+            titleScroll = window.setTimeout(scrolltitle, 170);
+        }
+        scrolltitle();
+    </script>
+
 </body>
 
 </html>
