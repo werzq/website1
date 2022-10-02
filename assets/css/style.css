@@ -30,7 +30,7 @@ body {
 .pic {
     display: inline-block;
     padding: 8px;
-    background: linear-gradient(130deg, #ff7676a9, #ff0000a6);
+    background: linear-gradient(130deg, #ffd2d2a9, #ff0000a6);
     margin: auto;
     border-radius: 50%;
     background-size: 200% 200%;
