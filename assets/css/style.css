@@ -60,7 +60,7 @@ body {
 }
 
 .name {
-    color: #f2f2f2;
+    color: #cacaca;
     font-size: 28px;
     font-weight: 600;
     margin: 10px 0;
@@ -78,7 +78,7 @@ body {
 }
 
 .sm a {
-    color: #f2f2f2;
+    color: #cacaca;
     width: 56px;
     font-size: 22px;
     transition: .3s linear;
