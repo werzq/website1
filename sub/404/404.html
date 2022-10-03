@@ -52,6 +52,22 @@
             box-shadow: 0 2px 4px 0 rgba(14, 30, 37, .16);
         }
         
+        .e {
+            position: relative;
+            height: 1px;
+        }
+        
+        .f:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 5%;
+            right: 5%;
+            width: 90%;
+            height: 1px;
+            background-image: linear-gradient(to right, transparent, #cacaca, transparent);
+        }
+        
         a {
             margin: 0;
             font-weight: 600;
@@ -99,7 +115,7 @@
               </svg> Go back
                     </a>
                 </p>
-                <hr>
+                <div class="e f"></div>
                 <p class="cndt">xwqx.cf</p>
             </div>
         </div>
