@@ -15,16 +15,18 @@ body {
     justify-content: center;
 }
 
-.profile-card {
-    width: 400px;
+.card {
+    position: relative;
     text-align: center;
-    border-radius: 10px;
-    overflow: hidden;
-}
-
-.card-header {
-    background: #3523234f;
-    padding: 60px 40px;
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    max-width: 364px;
+    padding: 24px;
+    background: rgba(37, 37, 37, 0.315);
+    color: #cacaca;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px 0 rgba(14, 30, 37, .16);
 }
 
 .pic {
