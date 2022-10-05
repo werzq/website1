@@ -3,7 +3,7 @@
   to = "sub/404/404.html"
   status = 200
   
-  [[redirects]]
+[[redirects]]
   from = "/extras"
   to = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
   status = 404
