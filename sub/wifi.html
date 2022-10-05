@@ -68,27 +68,6 @@
             background-image: linear-gradient(to right, transparent, #cacaca, transparent);
         }
         
-        a {
-            margin: 0;
-            font-weight: 600;
-            line-height: 24px;
-            color: #e66767;
-        }
-        
-        a svg {
-            position: relative;
-            top: 2px;
-        }
-        
-        a:hover,
-        a:focus {
-            text-decoration: none;
-        }
-        
-        a:hover svg path {
-            fill: #f34545;
-        }
-        
         p:last-of-type {
             margin-bottom: 0;
         }
@@ -103,21 +82,6 @@
         .cndt {
             text-align: center;
         }
-        
-        .btn {
-            display: inline-block;
-            text-decoration: none;
-            padding: 10px 70px;
-            color: #f2f2f2;
-            border: 2px solid #b62b2ba8;
-            border-radius: 12px;
-            transition: .2s linear;
-        }
-        
-        .btn:hover {
-            background: #b62b2ba8;
-            text-decoration: none;
-        }
     </style>
 </head>
 
@@ -125,19 +89,12 @@
     <div class="main">
         <div class="card">
             <div class="header">
-                <img src="swif.png" alt="qrcode" class="center">
+                <img src="qrcode.png" alt="qrcode" class="center">
                 <div class="e f"></div>
                 <p class="cndt">xwqx.cf</p>
             </div>
         </div>
     </div>
-    <script>
-        (function() {
-            if (document.referrer && document.location.host && document.referrer.match(new RegExp("^https?://" + document.location.host))) {
-                document.getElementById("back-link").setAttribute("href", document.referrer);
-            }
-        })();
-    </script>
 </body>
 
 </html>
