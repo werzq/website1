@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>cat</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+</head>
+<style>
+    body {
+        background-color: #111111;
+        color: #8b0056;
+    }
+    
+    .centertxt {
+        text-align: center
+    }
+    
+    .card {
+        background-color: #161616;
+        box-shadow: 0 8px 8px 0 rgba(0, 0, 0, 0.2);
+        padding: 24px;
+        max-width: 300px;
+        margin: auto;
+        text-align: center;
+        font-family: arial;
+    }
+    
+    .card p {
+        text-shadow: 0 0 .8em #c20078
+    }
+    
+    .animatedhead span {
+        text-align: center;
+        font-size: 40px;
+        color: #8b0056;
+        animation: animatinghead 10s linear infinite;
+        animation-delay: calc(1000ms * var(--i));
+    }
+    
+    @keyframes animatinghead {
+        0%,
+        100% {
+            color: #c20078;
+            filter: blur(1px);
+            text-shadow: 0 0 10px #c20078, 0 0 20px #c20078, 0 0 30px #c20078, 0 0 40px #c20078, 0 0 60px #c20078, 0 0 80px #c20078, 0 0 100px #c20078, 0 0 120px #c20078;
+        }
+        5%,
+        95% {
+            filter: blur(0);
+            color: #8b0056;
+            text-shadow: none;
+        }
+    }
+    
+    .crdwwn {
+        font-family: Arial;
+        color: #8b0056;
+        position: fixed;
+        bottom: 1px;
+        text-shadow: 0 0 .8em #c20078
+    }
+</style>
+
+<body>
+
+
+
+
+    <div class="card">
+        <img src="https://xwqx.cf/assets/media/img69.png" alt="franklin" style="width:100%">
+        <h1>
+            <div class="animatedhead centertxt">
+                <span style="--i:1">F</span>
+                <span style="--i:2">r</span>
+                <span style="--i:3">a</span>
+                <span style="--i:4">n</span>
+                <span style="--i:5">k</span>
+                <span style="--i:6">l</span>
+                <span style="--i:7">i</span>
+                <span style="--i:8">n</span>
+        </h1>
+        <p class="title">Cutest cat</p>
+        <p>
+            <3</p>
+                </div>
+
+    </div>
+</body>
+<footer>
+    <h4 class="crdwwn">
+        © 2022 wQ
+    </h4>
+</footer>
+
+</html>
