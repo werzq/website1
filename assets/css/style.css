@@ -42,10 +42,6 @@ body {
     align-items: center;
 }
 
-.loader>img {
-    width: 100px;
-}
-
 .loader.hidden {
     animation: fadeOut 1s;
     animation-fill-mode: forwards;
