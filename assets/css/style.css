@@ -114,3 +114,7 @@ body {
 .sm a:hover {
     color: #e66767;
 }
+
+.annoyhighlightP h1::selection {
+    background: #00000000
+}
