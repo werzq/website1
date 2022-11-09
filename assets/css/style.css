@@ -115,6 +115,6 @@ body {
     color: #e66767;
 }
 
-.annoyhighlightP h1::selection {
+.annoyhighlightP p::selection {
     background: #00000000
 }
