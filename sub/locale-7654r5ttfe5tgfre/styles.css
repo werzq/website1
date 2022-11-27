@@ -1,0 +1,102 @@
+body {
+    border: #ff5b5b;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    background: black;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+::selection {
+    color: none;
+}
+
+.text-box {
+    font-size: 8em;
+    font-family: 'Rubik Microbe', cursive;
+    letter-spacing: 7px;
+    word-spacing: 12px;
+    text-transform: uppercase;
+    color: #ff5b5b;
+}
+
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    flex-direction: row;
+}
+
+a:link {
+    text-decoration: none;
+    color: #ff5b5b;
+}
+
+a:visited {
+    text-decoration: none;
+    color: #ff5b5b;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #ff5b5b;
+}
+
+a:active {
+    text-decoration: none;
+    color: #ff5b5b;
+}
+
+.button {
+    transition: .2s linear;
+    -o-transition: 0.2s linear;
+    -ms-transition: 0.2s linear;
+    -moz-transition: 0.2s linear;
+    -webkit-transition: 0.2s linear;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
+    word-spacing: normal;
+    letter-spacing: 5px;
+    border: 1px solid #ff5b5b;
+    background: black;
+    cursor: pointer;
+}
+
+.d:hover {
+    color: #6d6df7;
+    transition: .2s linear;
+    -o-transition: 0.2s linear;
+    -ms-transition: 0.2s linear;
+    border: 1px solid #6d6df7;
+    -moz-transition: 0.2s linear;
+    -webkit-transition: 0.2s linear;
+    text-shadow: 0 0 15px #6d6df7;
+    box-shadow: 0 0px 5px #6d6df7;
+}
+
+.y:hover {
+    color: #c70101;
+    transition: .2s linear;
+    -o-transition: 0.2s linear;
+    -ms-transition: 0.2s linear;
+    border: 1px solid #c70101;
+    -moz-transition: 0.2s linear;
+    -webkit-transition: 0.2s linear;
+    text-shadow: 0 0 15px #c70101;
+    box-shadow: 0 0px 5px #c70101;
+}
