@@ -37,6 +37,10 @@ canvas {
     flex-direction: row;
 }
 
+.n:hover {
+    cursor: not-allowed;
+}
+
 a:link {
     text-decoration: none;
     color: #ff5b5b;
