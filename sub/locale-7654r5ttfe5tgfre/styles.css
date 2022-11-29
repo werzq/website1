@@ -29,6 +29,10 @@ canvas {
     color: #ff5b5b;
 }
 
+.heading {
+    position: relative;
+}
+
 .button-wrapper {
     display: flex;
     justify-content: center;
