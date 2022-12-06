@@ -79,6 +79,31 @@ body {
     background-color: #161616;
 }
 
+.loader {
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 99;
+    height: 100%;
+    display: flex;
+    position: fixed;
+    background: #000;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader.hidden {
+    animation: fadeOut 1s;
+    animation-fill-mode: forwards
+}
+
+@keyframes fadeOut {
+    100% {
+        opacity: 0;
+        visibility: hidden
+    }
+}
+
 h1 {
     font-weight: 900;
     margin: 0 0 1rem;
