@@ -1,9 +1,99 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
+    background: #333;
     font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-size: calc(10px + 0.33vw);
     -webkit-font-smoothing: antialiased;
-    background-color: #333333;
-    color: #ccc;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+h1 {
+    color: rgba(255, 255, 255, 0.637);
+    font: 400 3em Rubik;
+}
+
+.group {
+    width: 100%;
+    height: 110px;
+    overflow: hidden;
+    position: relative;
+}
+
+label {
+    position: absolute;
+    top: 36.6666666667px;
+    color: rgba(255, 255, 255, 0.5);
+    font: 400 36.6666666667px Rubik;
+    cursor: text;
+    transition: 0.25s ease;
+}
+
+input {
+    display: block;
+    width: 100%;
+    padding-top: 36.6666666667px;
+    border: none;
+    border-radius: 0;
+    color: white;
+    background: #333;
+    font-size: 36.6666666667px;
+    transition: 0.3s ease;
+}
+
+input:valid~label {
+    top: 0;
+    font: 700 22px Rubik;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+input:focus {
+    outline: none;
+}
+
+input:focus~label {
+    transition: .2s linear;
+    -webkit-transition: 0.2s linear;
+    -moz-transition: 0.2s linear;
+    -ms-transition: 0.2s linear;
+    -o-transition: 0.2s linear;
+    top: 0;
+    font: 700 22px Rubik;
+    color: #2196f3;
+}
+
+input:focus~.bar:before {
+    transform: translateX(0);
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px #333 inset;
+    -webkit-text-fill-color: white !important;
+}
+
+.bar {
+    background: rgba(255, 255, 255, 0.5);
+    content: "";
+    width: 550px;
+    height: 3.6666666667px;
+    transition: 0.3s ease;
+    position: relative;
+}
+
+.bar:before {
+    transition: .2s linear;
+    -webkit-transition: 0.2s linear;
+    -moz-transition: 0.2s linear;
+    -ms-transition: 0.2s linear;
+    -o-transition: 0.2s linear;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 150%;
+    background: #2196f3;
+    transform: translateX(-100%);
 }
 
 #generated {
@@ -16,4 +106,31 @@ code {
 
 #output {
     max-width: 80%;
+}
+
+::selection {
+    background: rgba(33, 150, 243, 0.3);
+}
+
+.enterbutton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6px 14px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Rubik', sans-serif;
+    border-radius: 6px;
+    border: none;
+    background: #6E6D70;
+    box-shadow: 0px 0.5px 1px rgba(0, 0, 0, 0.1), inset 0px 0.5px 0.5px rgba(255, 255, 255, 0.5), 0px 0px 0px 0.5px rgba(0, 0, 0, 0.12);
+    color: #DFDEDF;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    cursor: pointer;
+}
+
+.enterbutton:hover {
+    color: #ffffff;
+    background: #89888b;
+    box-shadow: 0 0 5px #aaaaaa;
 }
