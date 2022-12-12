@@ -10,7 +10,7 @@ function generate() {
         }
     }
     const finalUrl = btoa(step2.join(""));
-    currentURL = "https://very-very-very-very-very-very-very-very-very-long-link.make-my-link-longer.ml/this/link/is/really/quite/long/its-actually-quite-impressive/the-sheer-length-of-this-link/?thisIsAVeryLongLink=" + encodeURIComponent(finalUrl) + "";
+    currentURL = "https://thisisaverrrrrylonglinkextenderthatimadeforliterallynoreason.xwqx.cf/this/is/a/very/very/very/long-link/madeby/wq?thislinkissobigandlongandverycooolandnicetoo=" + encodeURIComponent(finalUrl);
     document.getElementById("generated").style.display = "block";
     document.getElementById("output").innerText = currentURL;
 }
