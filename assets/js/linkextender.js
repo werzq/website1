@@ -38,7 +38,7 @@ function validURL(str) {
         '(\\#[-a-z\\d_]*)?$', 'i'); // fragment locator
     return !!pattern.test(str);
 }
-console.log('Hello!\nDo sampleTest(url) for console generating')
+console.log('Hello!\nDo sampleTest(url) for console generating');
 
 function sampleTest(url) {
     var testurl = url
