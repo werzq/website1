@@ -1,0 +1,9 @@
+{
+  "name": "wqutils",
+  "version": "1.0.0",
+  "description": "a utility module by wQ",
+  "type": "module",
+  "main": "wQutils.js",
+  "author": "wQ",
+  "license": "ISC"
+}
