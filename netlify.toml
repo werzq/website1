@@ -1,9 +1,0 @@
-[[redirects]]
-  from = "/*"
-  to = "sub/404/404.html"
-  status = 200
-
-[[redirects]]
-  from = "/rendr"
-  to = "sub/rendr.html"
-  status = 200
