@@ -1,0 +1,26 @@
+<svg version="1.1" width="121" height="34.02330017089844" viewBox="-0.4820000007748604 -0.026600003242492676 121 34.02330017089844" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient id="grad_1" x1="13.0181" y1="75.0693" x2="133.0176" y2="75.0693" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#27AAE1"/>
+      <stop offset="1" stop-color="#115489"/>
+    </linearGradient>
+    <linearGradient id="grad_2" x1="17.5205" y1="75.0693" x2="128.5137" y2="75.0693" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2F7EBA"/>
+      <stop offset="0.506" stop-color="#3F9DD6"/>
+      <stop offset="1" stop-color="#3E97D1"/>
+    </linearGradient>
+  <linearGradient id="grad_1-,0,0,0.6315789222717285,-13,-26.55" x1="0.0181" y1="20.8622" x2="120.0176" y2="20.8622" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#27AAE1"/>
+      <stop offset="1" stop-color="#115489"/>
+    </linearGradient><linearGradient id="grad_2-,0,0,0.6315789222717285,-13,-26.55" x1="4.5205" y1="20.8622" x2="115.5137" y2="20.8622" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#2F7EBA"/>
+      <stop offset="0.506" stop-color="#3F9DD6"/>
+      <stop offset="1" stop-color="#3E97D1"/>
+    </linearGradient></defs>
+  <!-- Exported by Scratch - http://scratch.mit.edu/ -->
+  <g id="ID0.4710774854756892">
+    <path id="ID0.6556606939993799" fill="url(#grad_1-,0,0,0.6315789222717285,-13,-26.55)" d="M 93.874 0.4734 L 26.161 0.4734 C 11.745 0.4734 0.018 7.8805 0.018 16.9847 C 0.018 26.0902 11.746 33.4967 26.161 33.4967 L 93.874 33.4967 C 108.289 33.4967 120.018 26.0896 120.018 16.9847 C 120.018 7.8805 108.289 0.4734 93.874 0.4734 Z " stroke-width="0.8363288632643017"/>
+    <path id="ID0.20780517207458615" fill="url(#grad_2-,0,0,0.6315789222717285,-13,-26.55)" d="M 115.514 16.9847 C 115.514 24.5334 105.826 30.6527 93.874 30.6527 L 26.161 30.6527 C 14.209 30.6527 4.52 24.5334 4.52 16.9847 L 4.52 16.9847 C 4.52 9.4367 14.209 3.3174 26.161 3.3174 L 93.874 3.3174 C 105.826 3.3174 115.514 9.4367 115.514 16.9847 L 115.514 16.9847 Z " stroke-width="0.8363288632643017"/>
+  </g>
+  <text id="ID0.6818255227990448" fill="#000000" text-anchor="start" font-family="Sans Serif" font-size="22" transform="matrix(1, 0, 0, 0.763501, 21, 3.7595)" stroke-width="1" alignment-baseline="text-before-edge" xml:space="preserve"><tspan x="0" style="white-space: pre" dy="1.13em">Restart</tspan></text>
+</svg>
