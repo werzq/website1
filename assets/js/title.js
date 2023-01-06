@@ -1,2 +1,6 @@
-function scrolltitle() { document.title = title.substring(position, title.length) + title.substring(0, position), ++position > title.length && (position = 0), titleScroll = window.setTimeout(scrolltitle, 170) }
-title = "      Welcome      ", position = 0, scrolltitle();
+var origTitle = document.title;
+
+function oldTitle() { document.title = origTitle }
+
+function newTitle() { document.title = "noo come back :(" }
+window.onblur = newTitle, window.onfocus = oldTitle
