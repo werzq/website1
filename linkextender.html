@@ -7,25 +7,39 @@
     <title>Link Extender</title>
     <link href="https://fonts.googleapis.com/css?family=Rubik:300,500,700" rel="stylesheet" />
     <link rel="stylesheet" href="./assets/css/linkextender.css">
-    <script src="./assets/js/linkextender.js"></script>
 
 </head>
 
 <body>
-    <h1>wQ's Link Extender 3000&trade;</h1>
-    <div class="group">
-        <input type="text" id="link" name="link" required="required" />
-        <label for="link">Enter URL</label>
-        <div class="bar"></div>
+    <h1>Link Extender&trade;</h1>
+
+    <div class='sliders'>
+        <label class="urlfieldentr one">
+          <input type="url" placeholder=" "/ id="mainurl">
+          <span class="placeholder">Enter URL</span>
+        </label>
+        <p onclick="optSet()" class="cusbuton">CUSTOM REDIRECT PAGE SETTINGS<b id="dropdnbuton" style="padding-left: 5px;" class="cusbuton"><i class="fa-solid fa-caret-right"></i></b></p>
+        <div id="customiseset" style="display: none;">
+            <label class="urlfieldentr one">
+            	  <input type="text" placeholder=" "/ id="loadingtxt">
+            	  <span class="placeholder">Enter Loading text</span>
+            	</label>
+            <div style="text-align:center;">
+                <p style="color: #ccc;">BACKGROUND COLOR</p>
+                <input type='range' , id='rangeRed' value='6' min='0' max='255'></input>
+                <br>
+                <input type='range' , id='rangeGreen' value='6' min='0' max='255'></input>
+                <br>
+                <input type='range' , id='rangeBlue' value='6' min='0' max='255'></input>
+                <br>
+            </div>
+        </div>
+        <button class="submitbuton" onclick="generateLink()">Generate link</button>
+        <div style="word-wrap: break-word;width: 16rem; color: #ccc;">
+            <p id="genurl"></p>
+        </div>
     </div>
-    <button class="enterbutton" role="button" id="generate">Enter</button>
-    <div id="generated">
-        <h2>copy this link: </h2>
-        <code id="output"></code>
-        <br>
-        <br>
-        <button class="enterbutton" id="copy">Copy</button>
-    </div>
+    <script src="./assets/js/linkextender.js"></script>
 </body>
 
 </html>
