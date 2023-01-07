@@ -94,8 +94,8 @@ function generateLink() {
             const colorpart = encodeURIComponent(finallcol)
 
             currentURL = "https://thisisaverrrrrylonglinkextenderthatimadeforliterallynoreason.xwqx.cf/this/is/a/very/very/very/long-link/madeby/wq?sharing=" + urlpart + "&a=" + txtpart + "&link=" + colorpart;
-            console.log(url + ltxt + bakcolor);
             document.getElementById("genurl").innerText = currentURL;
+            document.getElementById("genurl").href = currentURL;
         }
     }
 

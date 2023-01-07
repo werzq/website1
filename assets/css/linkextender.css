@@ -220,3 +220,22 @@ span {
     transition: .3s;
     text-shadow: 0 0 15px;
 }
+
+a:link {
+    color: rgb(211, 211, 211);
+}
+
+a:visited {
+    color: rgb(211, 211, 211);
+}
+
+a:hover {
+    transition: .3s;
+    color: rgb(211, 211, 211);
+    text-shadow: 0 0 5px;
+    cursor: pointer;
+}
+
+a:active {
+    color: rgb(211, 211, 211);
+}
