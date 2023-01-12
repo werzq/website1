@@ -1,6 +1,6 @@
 <h1 align="center">xwqx.cf</h1>
 <p align="center">
-    <a href="https://hypnotic.dev"><img src="https://github.com/iamstrawberry/website1/blob/59d7b2a4e0538d02e9716c8979fb70d884772d8f/assets/media/logoanm.gif"     alt="logo" width="120"/></a>
+  <img src="https://github.com/iamstrawberry/website1/blob/59d7b2a4e0538d02e9716c8979fb70d884772d8f/assets/media/logoanm.gif"     alt="logo" width="120"/>
 </p>
 <p align="center">
   <img src="https://img.shields.io/badge/0%25-OPTIMIZED-brightgreen?style=for-the-badge" alt="0% - OPTIMIZED">
