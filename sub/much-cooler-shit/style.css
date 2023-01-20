@@ -1,0 +1,44 @@
+body {
+    font-family: miCross;
+    background-image: url("bg.png");
+}
+
+.tb {
+    width: fit-content;
+    background: silver;
+}
+
+@font-face {
+    font-family: miCross;
+    src: url(micross.ttf);
+}
+
+.button {
+    width: auto;
+    color: black;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    border: 1px solid transparent;
+    font-size: 1.25rem;
+    line-height: 1.5;
+    background: silver;
+    border-radius: 1px;
+    border-width: 2px;
+    border-style: outset;
+    transition: .2s;
+    Padding-left: 2%;
+    Padding-right: 2%;
+    width: fit-content;
+    border-color: buttonface;
+    border-right-color: #424242;
+    border-bottom-color: #424242;
+}
+
+.button:hover {
+    transition: .2s;
+    border: 2px inset #fff;
+    background: silver;
+    color: #424242;
+    box-shadow: -1px -1px #000;
+}
