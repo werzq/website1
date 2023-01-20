@@ -1,4 +1,5 @@
 body {
+    user-select: none;
     font-family: miCross;
     background-image: url("bg.png");
 }
@@ -6,6 +7,11 @@ body {
 .tb {
     width: fit-content;
     background: silver;
+}
+
+.cntr {
+    align-items: center;
+    text-align: center;
 }
 
 @font-face {
