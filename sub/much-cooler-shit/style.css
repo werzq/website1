@@ -1,7 +1,9 @@
 body {
     user-select: none;
     font-family: miCross;
+    font-size: calc(10px + .33vw);
     background-image: url("bg.png");
+    -webkit-font-smoothing: antialiased;
 }
 
 .tb {
@@ -20,7 +22,6 @@ body {
 }
 
 .button {
-    width: auto;
     color: black;
     text-align: center;
     cursor: pointer;
@@ -47,4 +48,12 @@ body {
     background: silver;
     color: #424242;
     box-shadow: -1px -1px #000;
+}
+
+.copyright {
+    right: 0;
+    bottom: 0;
+    height: 2.5em;
+    position: fixed;
+    padding: 2px 2px 2px;
 }
