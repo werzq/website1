@@ -7,7 +7,7 @@ const cheesesyfacts = ["All hail the mighty cheese !",
     "Good to know: Eating Cheese Before Bed Can Help You Sleep",
     "Spoiler: Mice Don't Actually Like Cheese"
 ];
-
+document.getElementById('cheezHQ').innerHTML = '<title>cheese</title><meta charset="utf-8"><meta name="title" content="cheese"><meta name="theme-color" content="#fccc02"><meta name="description" content=""><meta name="viewport" content="width=device-width,initial-scale=1"><meta property="og:title" content="cheese"><meta property="og:type" content="website"><meta property="og:url" content="https://cheese.xwqx.cf/"><meta property="og:image" content="https://cheese.xwqx.cf/cheese.png"><meta property="og:description" content=""><meta property="twitter:title" content="cheese"><meta property="twitter:card" content="summary_large_image"><meta property="twitter:url" content="https://cheese.xwqx.cf/"><meta property="twitter:image" content="https://cheese.xwqx.cf/cheese.png"><meta property="twitter:description" content="">';
 var dacheez = cheesesyfacts[randomcheese(cheesesyfacts.length)]
 document.querySelector('meta[name="description"]').setAttribute("content", dacheez);
 document.querySelector('meta[property="og:description"]').setAttribute("content", dacheez);
