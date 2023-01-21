@@ -8,12 +8,10 @@ const cheesesyfacts = ["All hail the mighty cheese !",
     "Spoiler: Mice Don't Actually Like Cheese"
 ];
 
-function getdacheese() {
-    var dacheez = cheesesyfacts[randomcheese(cheesesyfacts.length)]
-    document.querySelector('meta[name="description"]').setAttribute("content", dacheez);
-    document.querySelector('meta[property="og:description"]').setAttribute("content", dacheez);
-    document.querySelector('meta[property="twitter:description"]').setAttribute("content", dacheez);
-}
+var dacheez = cheesesyfacts[randomcheese(cheesesyfacts.length)]
+document.querySelector('meta[name="description"]').setAttribute("content", dacheez);
+document.querySelector('meta[property="og:description"]').setAttribute("content", dacheez);
+document.querySelector('meta[property="twitter:description"]').setAttribute("content", dacheez);
 
 function randomcheese(swiss) {
     let cheddar = Math.random() * swiss;
