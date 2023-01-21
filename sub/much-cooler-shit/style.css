@@ -1,9 +1,26 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
 body {
+    height: 100vh;
+    display: flex;
     user-select: none;
+    align-items: center;
     font-family: miCross;
+    justify-content: center;
     font-size: calc(10px + .33vw);
     background-image: url("bg.png");
     -webkit-font-smoothing: antialiased;
+}
+
+fieldset {
+    height: 15rem;
+    padding: 1em;
+    position: relative;
 }
 
 .tb {
@@ -14,6 +31,12 @@ body {
 .cntr {
     align-items: center;
     text-align: center;
+}
+
+.downintf {
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
 }
 
 @font-face {
@@ -34,8 +57,8 @@ body {
     border-width: 2px;
     border-style: outset;
     transition: .2s;
-    Padding-left: 2%;
-    Padding-right: 2%;
+    Padding-left: 1em;
+    Padding-right: 1em;
     width: fit-content;
     border-color: buttonface;
     border-right-color: #424242;
@@ -51,9 +74,8 @@ body {
 }
 
 .copyright {
-    right: 0;
+    right: 1em;
     bottom: 0;
     height: 2.5em;
     position: fixed;
-    padding: 2px 2px 2px;
 }
