@@ -67,6 +67,7 @@ fieldset {
 
 .button:hover {
     transition: .2s;
+    font-size: 1.20rem;
     border: 2px inset #fff;
     background: silver;
     color: #424242;
