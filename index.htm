@@ -41,6 +41,11 @@
         
          :root {
             --bbackground: #ccc;
+            --plz-color-black-2: #212529;
+            --plz-color-white: white;
+            --plz-border-radius-default: 0.25rem;
+            --scale: 0;
+            --arrow: 5px;
         }
         
         body {
@@ -99,6 +104,47 @@
             height: auto;
             padding: 6%;
             box-shadow: inset 0px .3em .1em rgba(0, 0, 0, .2);
+        }
+        
+        .tooltip {
+            box-sizing: border-box;
+            font-family: donotchez;
+        }
+        
+        .tooltip::before,
+        .tooltip::after {
+            position: absolute;
+            transform: translateX(-50%) translateY(var(--translate-y, 0)) scale(var(--scale));
+            transition: 200ms transform;
+            transform-origin: bottom center;
+            top: -0.25rem;
+            left: 50%;
+        }
+        
+        .tooltip::before {
+            --translate-y: calc(-100% - var(--arrow));
+            background-color: var(--plz-color-black-2);
+            color: var(--plz-color-white);
+            text-align: center;
+            border-radius: var(--plz-border-radius-default);
+            content: attr(data-tool);
+            padding: 0.5rem;
+            width: max-content;
+            max-width: 100%;
+        }
+        
+        .tooltip:hover::before,
+        .tooltip:hover::after {
+            --scale: 1;
+        }
+        
+        .tooltip::after {
+            --translate-y: calc(-1 * var(--arrow));
+            transform-origin: top center;
+            content: '';
+            border: var(--arrow) solid transparent;
+            border-top-color: var(--plz-color-black-2);
+            border-top-width: 5px;
         }
         
         .no_the_cheeez {
@@ -191,8 +237,10 @@
             <i class="fa-light fa-triangle-exclamation" style="font-size: 5rem;"></i><br>
             <h2>Please do not the cheese</h2>
             <div style="text-align: justify;">
-                <p><b>CHEZ License Copyright (c) 2023 Mr. Cheese Cleves</b><br> No permission is hereby granted, free of charge, not even your mom to obtain a copy of this glorious picture and associated documentation files (the "cheese"), to deal in the
-                    cheese with restriction, including limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the cheese, and to permit persons to whom the cheese is given to,<br><br><b>Subject to the following
+                <p><b><b class="tooltip" data-tool="International Union of Pure Cheese">IUPC</b> License Copyright (c) 2023 Mr. Cheese Cleves</b><br> No permission is hereby granted, free of charge, not even your mom to obtain a copy of this glorious picture
+                    and associated documentation files (the "cheese"), to deal in the cheese with restriction, including limitation to the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the cheese, and to permit
+                    persons to whom the cheese is given to,
+                    <br><br><b>Subject to the following
                     conditions:</b>
                     <br>• Do not the cheese<br>• Respect the cheese<br>• Obey the cheese<br>• Do not impersonate the cheese<br>
 
