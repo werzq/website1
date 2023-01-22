@@ -21,6 +21,9 @@
     <meta property="twitter:url" content="https://cheese.xwqx.cf/">
     <meta property="twitter:image" content="https://cheese.xwqx.cf/cheese.png">
     <meta property="twitter:description" content="All hail the mighty cheese !">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -30,10 +33,19 @@
             src: url('alagard.ttf');
         }
         
+        @font-face {
+            font-family: donotchez;
+            src: url('pixellari.ttf');
+        }
+        
+         :root {
+            --bbackground: #ccc;
+        }
+        
         body {
             user-select: none;
             font-family: cheese;
-            background: #ccc;
+            background: var(--bbackground)
         }
         
         figure {
@@ -88,19 +100,110 @@
             box-shadow: inset 0px .3em .1em rgba(0, 0, 0, .2);
         }
         
+        .no_the_cheeez {
+            font-family: donotchez;
+        }
+        
+        .dont_the_chez_pls {
+            cursor: pointer;
+            display: none;
+            height: 100%;
+            position: fixed;
+            text-align: center;
+            top: 0;
+            width: 100%;
+            z-index: 10000;
+        }
+        
+        .dont_the_chez_pls .helper {
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+        }
+        
+        .dont_the_chez_pls>div {
+            background-color: #fff;
+            box-shadow: 10px 10px 60px #555;
+            display: inline-block;
+            height: auto;
+            max-width: 551px;
+            min-height: 100px;
+            vertical-align: middle;
+            width: 60%;
+            position: relative;
+            border-radius: 8px;
+            padding: 15px 5%;
+        }
+        
+        .close_da_anti_chez_copy {
+            background-color: #fff;
+            border: 3px solid #999;
+            border-radius: 50px;
+            cursor: pointer;
+            display: inline-block;
+            font-family: arial;
+            font-weight: bold;
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            font-size: 25px;
+            line-height: 30px;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+        }
+        
+        .close_da_anti_chez_copy:hover {
+            background-color: #ccc;
+        }
+        
         .copyright {
             right: 0.5em;
             bottom: 0;
             height: 2.5em;
             position: fixed;
+            transition: .3s;
+        }
+        
+        .copyright:hover {
+            cursor: pointer;
+            transition: .3s;
+            text-shadow: 0 0 5px;
         }
     </style>
     <figure>
         <img src="./cheese.png" alt="All hail the cheese!">
     </figure>
-    <div class="copyright">
+    <div class="copyright anti_chez_copy">
         <h3>&copy; 2023 wQ</h3>
     </div>
+    <div class="dont_the_chez_pls no_the_cheeez">
+        <span class="helper"></span>
+        <div>
+            <div class="close_da_anti_chez_copy">&times;</div>
+            <i class="fa-light fa-triangle-exclamation" style="font-size: 5rem;"></i><br>
+            <h2>please do not the cheese</h2>
+            <div style="text-align: justify;">
+                <p><b>CHEZ License Copyright (c) 2023 Mr. Cheese Cleves</b><br> No permission is hereby granted, free of charge, not even your mom to obtain a copy of this glorious picture and associated documentation files (the "cheese"), to deal in the
+                    cheese with restriction, including limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the cheese, and to permit persons to whom the cheese is given to,<br><br><b> subject to the following
+                    conditions:</b>
+                    <br> • Do not the cheese<br> • Respect the cheese<br> • Obey the cheese<br> • Do not impersonate the cheese<br>
+
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        $(window).load(function() {
+            $(".anti_chez_copy").click(function() {
+                $('.dont_the_chez_pls').show();
+            });
+            $('.close_da_anti_chez_copy').click(function() {
+                $('.dont_the_chez_pls').hide();
+            });
+        });
+    </script>
 </body>
 
 </html>
