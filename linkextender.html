@@ -35,6 +35,23 @@
                 <input type='range' , id='rangeBlue' value='6' min='0' max='255'></input>
                 <br>
             </div>
+            <div style="text-align: center;">
+                <p style="color: #ccc;">MODE<sup style="color:#707070;font-size: 0.69em;">beta</sup></p>
+                <select id="jMode" onchange='if(this.value != 1) {shobutton(`show`)}else shobutton(`hide`)'>
+                    <option value="1">Default Encode Format</option>
+                    <option value="2">zENcoDE Encode Format</option>
+                </select>
+            </div><br>
+            <p id="minb" style="display: none;">
+                <label class="toggleSwitch nolabel" onclick="">
+                      <input id='mnb' type="checkbox"/>
+                      <span>
+                          <span>normal</span>
+                          <span>minified</span>
+                      </span>
+                      <a></a>
+                  </label>
+            </p>
         </div>
         <button class="submitbuton" onclick="generateLink()">Generate link</button>
         <div style="word-wrap: break-word;width: 16rem; color: #ccc;">
