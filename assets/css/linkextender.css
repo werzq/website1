@@ -21,7 +21,9 @@
         flex-direction: column;
         align-items: center;
         justify-content: space-around;
-        padding: 25px;
+        padding-left: 15px;
+        padding-right: 15px;
+        padding-bottom: 15px;
         width: 18rem;
         border-radius: 5px;
         background-color: #363636;

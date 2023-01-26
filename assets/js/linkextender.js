@@ -15,6 +15,7 @@ const changeColor = () => {
 red.addEventListener('input', changeColor);
 green.addEventListener('input', changeColor);
 blue.addEventListener('input', changeColor)
+document.getElementById('jMode').value = '1';
 
 
 changeColor();
@@ -71,6 +72,15 @@ function shobutton(vis) {
         document.getElementById("mnb").checked = false;
     }
 }
+
+const checkbox = document.getElementById('mnb')
+checkbox.addEventListener('change', (event) => {
+    if (event.currentTarget.checked) {
+        document.getElementById("customiseed").style.display = 'none'
+    } else {
+        document.getElementById("customiseed").style.display = 'block'
+    }
+})
 
 function generateLink() {
     url = document.getElementById("mainurl").value;
