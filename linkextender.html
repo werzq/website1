@@ -1,66 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
+<!--
+      ___                   ___           ___     
+     /\__\      ___        /\__\         /\__\    
+    /:/  /     /\  \      /::|  |       /:/  /    
+   /:/  /      \:\  \    /:|:|  |      /:/__/     
+  /:/  /       /::\__\  /:/|:|  |__   /::\__\____ 
+ /:/__/     __/:/\/__/ /:/ |:| /\__\ /:/\:::::\__\
+ \:\  \    /\/:/  /    \/__|:|/:/  / \/_|:|~~|~   
+  \:\  \   \::/__/         |:/:/  /     |:|  |    
+   \:\  \   \:\__\         |::/  /      |:|  |    
+    \:\__\   \/__/         /:/  /       |:|  |    
+     \/__/                 \/__/         \|__|    
+      ___           ___           ___           ___           ___           ___           ___           ___     
+     /\  \         |\__\         /\  \         /\  \         /\__\         /\  \         /\  \         /\  \    
+    /::\  \        |:|  |        \:\  \       /::\  \       /::|  |       /::\  \       /::\  \       /::\  \   
+   /:/\:\  \       |:|  |         \:\  \     /:/\:\  \     /:|:|  |      /:/\:\  \     /:/\:\  \     /:/\:\  \  
+  /::\~\:\  \      |:|__|__       /::\  \   /::\~\:\  \   /:/|:|  |__   /:/  \:\__\   /::\~\:\  \   /::\~\:\  \ 
+ /:/\:\ \:\__\ ____/::::\__\     /:/\:\__\ /:/\:\ \:\__\ /:/ |:| /\__\ /:/__/ \:|__| /:/\:\ \:\__\ /:/\:\ \:\__\
+ \:\~\:\ \/__/ \::::/~~/~       /:/  \/__/ \:\~\:\ \/__/ \/__|:|/:/  / \:\  \ /:/  / \:\~\:\ \/__/ \/_|::\/:/  /
+  \:\ \:\__\    ~~|:|~~|       /:/  /       \:\ \:\__\       |:/:/  /   \:\  /:/  /   \:\ \:\__\      |:|::/  / 
+   \:\ \/__/      |:|  |       \/__/         \:\ \/__/       |::/  /     \:\/:/  /     \:\ \/__/      |:|\/__/  
+    \:\__\        |:|  |                      \:\__\         /:/  /       \::/__/       \:\__\        |:|  |    
+     \/__/         \|__|                       \/__/         \/__/         ~~            \/__/         \|__|    
+-->
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="./assets/media/edit.png">
-    <title>Link Extender</title>
-    <link href="https://fonts.googleapis.com/css?family=Rubik:300,500,700" rel="stylesheet" />
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css">
-    <link rel="stylesheet" href="./assets/css/linkextender.css">
 
-</head>
 
-<body>
-    <h1>Link Extender&trade;</h1>
 
-    <div class='sliders'>
-        <label class="urlfieldentr one">
-          <input type="url" placeholder=" "/ id="mainurl">
-          <span class="placeholder">Enter URL</span>
-        </label>
-        <p onclick="optSet()" class="cusbuton">CUSTOM REDIRECT PAGE SETTINGS<b id="dropdnbuton" style="padding-left: 5px;" class="cusbuton"><i class="fa-solid fa-caret-right"></i></b></p>
-        <div id="customiseset" style="display: none;">
-            <div id="customiseed">
-                <label class="urlfieldentr one">
-            	  <input type="text" placeholder=" "/ id="loadingtxt">
-            	  <span class="placeholder">Enter Loading text</span>
-            	</label>
-                <div style="text-align:center;">
-                    <p style="color: #ccc;">BACKGROUND COLOR</p>
-                    <input type='range' , id='rangeRed' value='6' min='0' max='255'></input>
-                    <br>
-                    <input type='range' , id='rangeGreen' value='6' min='0' max='255'></input>
-                    <br>
-                    <input type='range' , id='rangeBlue' value='6' min='0' max='255'></input>
-                    <br>
-                </div>
-            </div>
-            <div style="text-align: center;">
-                <p style="color: #ccc;">MODE<sup style="color:#707070;font-size: 0.69em;">beta</sup></p>
-                <select id="jMode" onchange='if(this.value != 1) {shobutton(`show`)}else shobutton(`hide`)'>
-                    <option value="1">Default Encode Format</option>
-                    <option value="2">zENcoDE Encode Format</option>
-                </select>
-            </div><br>
-            <p id="minb" style="display: none;">
-                <label class="toggleSwitch nolabel" onclick="">
-                      <input id='mnb' type="checkbox"/>
-                      <span>
-                          <span>normal</span>
-                          <span>minified</span>
-                      </span>
-                      <a></a>
-                  </label>
-            </p>
-        </div>
-        <button class="submitbuton" onclick="generateLink()">Generate link</button>
-        <div style="word-wrap: break-word;width: 16rem; color: #ccc;">
-            <a id="genurl"></a>
-        </div>
-    </div>
-    <script src="./assets/js/linkextender.js"></script>
-</body>
 
-</html>
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Link Extender V3</title><link rel="icon" type="image/x-icon" href="./assets/media/edit.png"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/1.1.0/modern-normalize.min.css" integrity="sha512-wpPYUAdjBVSE4KJnH1VR1HeZfpl1ub8YT/NKx4PuQ5NmX2tKuGu6U/JRp5y+Y8XG2tV+wKQpNHVUX03MfMFn9Q==" crossorigin="anonymous"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.css" integrity="sha512-KXol4x3sVoO+8ZsWPFI/r5KBVB/ssCGB5tsv2nVOKwLg33wTFP3fmnXa47FdSVIshVTgsYk/1734xSk9aFIa4A==" crossorigin="anonymous"><script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.5.0/semantic.min.js" integrity="sha512-Xo0Jh8MsOn72LGV8kU5LsclG7SUzJsWGhXbWcYs2MAmChkQzwiW/yTQwdJ8w6UA9C6EVG18GHb/TrYpYCjyAQw==" crossorigin="anonymous"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@r-tek/colr_pickr@2.0.0/build/colr_pickr.min.css"><script src="https://cdn.jsdelivr.net/npm/@r-tek/colr_pickr@2.0.0/build/colr_pickr.min.js" defer="defer"></script><style>::selection{color:none;background:#e0e1E2B0}.center-card{display:flex;justify-content:center;padding-top:calc(6em + 2em)}.centered{text-align:center}.suprt{left:1em;bottom:0;height:2.5em;position:fixed}.footr{right:1em;bottom:0;height:2.5em;position:fixed}</style></head><body><div class="center-card"><div class="ui raised card"><div class="content"><div class="header centered" style="font-size:1.62em">LinkExtender&trade;</div><div class="ui secondary four item pointing menu"><a class="item active" data-tab="home"><i class="home icon"></i></a><a class="item" data-tab="customization"><i class="paint brush icon"></i></a><a class="item" data-tab="advanced"><i class="cogs icon"></i></a><a class="item" data-tab="info"><i class="info circle icon"></i></a></div><div class="ui tab active centered" data-tab="home"><h5 class="centered">Enter URL</h5><div class="ui input labeled"><div class="ui label">https://</div><input type="url" placeholder="example.com" id="eURL"></div><br></div><div class="ui tab" data-tab="customization"><h5 class="centered">Customization</h5><div class="inline field"><div class="ui checkbox"><input type="checkbox" tabindex="0" class="hidden" id="loadertxt"><label>Loader text</label></div></div><div class="ui fluid input hidden" style="padding-top:.3em" id="loadertxt-input"><input type="text" placeholder="Text" id="ltxxt"></div><div class="inline field" style="padding-top:.5em"><div class="ui checkbox"><input type="checkbox" tabindex="0" class="hidden" id="colorcheck"><label>Background color</label></div><button class="ui icon right floated mini button disabled" id="picker_launcher"><i class="edit outline icon"></i></button></div></div><div class="ui tab" data-tab="advanced"><div><h5 class="centered">Encoding Method</h5><div class="ui selection fluid dropdown"><input type="hidden" name="encoder" id="encdr"><i class="ui dropdown icon"></i><div class="default text">Select</div><div class="menu"><div class="item" selected="true" data-value="0">Default Method</div><div class="item" data-value="1">zENcoDE<sup style="color:gray">&beta;eta</sup></div></div></div></div></div><div class="ui tab" data-tab="info"><div><h5 class="centered">Info</h5><p style="text-align:justify"><span>Link Extender&trade; is a tool that can be used to extend your links.</span><br><br><span>It also allows you to customize the redirecting page with custom colors and text.</span><span>Just enter your URL and click on generate to generate an extended link.</span></p><h5 class="centered">Made by wQ</h5></div></div></div><div class="ui bottom attached button animated fade" onclick="Generate()"><div class="visible content">Generate</div><div class="hidden content">Click to Generate</div></div></div></div><div class="ui mini modal" id="urlmodal"><div class="header centered"><h2><i class="check square green outline icon"></i></h2><h3 style="margin-top:-1em">Link Generated</h3></div><div class="content"><div class="ui action fluid input"><input type="text" value="hi lol?" id="linkinpt" disabled="true"><button class="ui teal right labeled icon button" onclick="copylInd()"><i class="copy icon"></i>Copy</button></div></div></div><div class="ui mini modal" id="alrmodal"><div class="header centered"><h2><i class="exclamation triangle red icon"></i></h2><h3 style="margin-top:-1em">Error</h3></div><div class="content"><p class="centered" id="ertxt">hi lol?</p></div></div><div class="suprt"><a class="ui label">WE SUPPORT<span id="flagz">&nbsp;&nbsp;&nbsp;&nbsp;<i class="ps flag"></i></span></a></div><div class="footr"><a class="ui label" onclick="tesSt()"><i class="copyright outline icon"></i>2023 wQ</a></div><script>function copyToClipboard(e){var t=document.createElement("textarea");document.body.appendChild(t),t.value=e,t.select(),document.execCommand("copy"),document.body.removeChild(t)}function copylInd(){copyToClipboard(document.getElementById("linkinpt").value)}function Generate(){var e=document.getElementById("eURL").value,t=document.getElementById("ltxxt").value,n=picker_launcher.style.backgroundColor,l=document.getElementById("encdr").value;function o(e){const t=btoa(e);let n=[];for(const e of t.split(""))for(let t=0;t<4;t++)n.push(e);return encodeURIComponent(btoa(n.join("")))}function r(e,t){let n=" abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789\\/\"'`,.;:<>?|~!@#$%^&*(){}[]-_+=*";if("encrypt"===t){plaintext=e;let t="";for(let e=0;e<plaintext.length;e++)for(let l=0;l<n.length;l++)n[l]===plaintext[e]&&(t+=(l+1).toString()+"/");return t.substring(0,t.length-"/".length)}if("decrypt"===t){c=e;let t=c.split("/"),l="";for(let e=0;e<t.length;e++)for(let o=0;o<n.length;o++)o+1==t[e]&&(l+=n[o]);return l}console.log("mode error\nselect encrypt/decrypt")}if(""===e)document.getElementById("ertxt").innerHTML="Error: Please enter a URL",$("#alrmodal").modal({blurring:!0}).modal("show");else if(!1===/^(https?:\/\/)?((([a-z\d]([a-z\d-]*[a-z\d])*)\.)+[a-z]{2,}|(\d{1,3}\.){3}\d{1,3})(:\d+)?(\/[-a-z\d%_.~+]*)*(\?[;&a-z\d%_.~+=-]*)?(\#[-a-z\d_]*)?$/i.test(e))document.getElementById("ertxt").innerHTML="Error: Please enter a valid URL",$("#alrmodal").modal({blurring:!0}).modal("show");else{if(""===l)l="0";if(""==t)t="Redirecting...";if("0"===l){!function(e,t,n){currentURL="https://thisisaverrrrrylonglinkextenderthatimadeforliterallynoreason.xwqx.cf/this/is/a/very/very/very/long-link/madeby/wq?sharing="+e+"&a="+t+"&link="+n,document.getElementById("linkinpt").value=currentURL,$("#urlmodal").modal({blurring:!0}).modal("show")}(o(e),o(t),o(n))}else if("1"===l){!function(e,t,n){currentURL="https://i.xwqx.cf?a="+e+"&b="+t+"&c="+n,document.getElementById("linkinpt").value=currentURL,$("#urlmodal").modal({blurring:!0}).modal("show")}(r(e,"encrypt"),r(t,"encrypt"),r(n,"encrypt"))}else document.getElementById("ertxt").innerHTML="ERROR 43",$("#alrmodal").modal({blurring:!0}).modal("show")}}window.addEventListener("load",(function(){const e=$("#picker_launcher");let t=new ColorPicker(e[0],"#E0E1E2"),n=['&nbsp;&nbsp;&nbsp;&nbsp;<i class="sy flag"></i>','&nbsp;&nbsp;&nbsp;&nbsp;<i class="ps flag"></i>'],l=0;$(".menu .item").tab(),$(".ui.checkbox").checkbox(),$("#loadertxt-input").hide(),$(".ui.dropdown").dropdown(),$("#loadertxt").change((function(){this.checked?$("#loadertxt-input").show():$("#loadertxt-input").hide()})),$("#colorcheck").change((function(){this.checked?($("#picker_launcher").removeClass("disabled"),t=ColorPicker(e[0],"#E0E1E2")):($("#picker_launcher").addClass("disabled"),t=ColorPicker(e[0],"#E0E1E2"))})),setInterval((function(){$("#flagz").fadeOut(250,(function(){$(this).html(n[l]).fadeIn(250),l=(l+1)%n.length}))}),3e3)}));</script></body></html>
