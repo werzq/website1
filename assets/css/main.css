@@ -1,0 +1,33 @@
+body {
+    background-color: #121212;
+}
+
+.nave {
+    background: #1B1C1D;
+}
+
+@font-face {
+    font-family: space;
+    src: url('../fonts/space.ttf');
+}
+
+.logofont {
+    font-family: space;
+    animation: color-wave 1s linear infinite;
+    display: inline-block;
+    line-height: 1;
+    font-size: 2em;
+}
+
+@keyframes color-wave {
+    0% {
+        text-shadow: 1px 0 #ED8A8A, 2px 0 #EDB88A, 3px 0 #DCED8A, 4px 0 #A1ED8A, 5px 0 #8AEEE8, 6px 0 #8AB1ED, 7px 0 #9E8AED, 8px 0 #ED8AE3, 9px 0 #ED8AA8, 10px 0 #ED8AC4, 11px 0 #ED8A8A;
+    }
+    100% {
+        text-shadow: 1px 0 #ED8A8A, 2px 0 #EDB88A, 3px 0 #DCED8A, 4px 0 #A1ED8A, 5px 0 #8AEEE8, 6px 0 #8AB1ED, 7px 0 #9E8AED, 8px 0 #ED8AE3, 9px 0 #ED8AA8, 10px 0 #ED8AC4, 11px 0 #ED8A8A;
+    }
+}
+
+.nor {
+    border-radius: 0;
+}
