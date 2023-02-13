@@ -1,0 +1,26 @@
+{
+  "name": "prpdoc",
+  "version": "0.0.1",
+  "description": "docs4prp",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamstrawberry/website1.git"
+  },
+  "keywords": [
+    "primparity",
+    "prp"
+  ],
+  "author": "wQ",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iamstrawberry/website1/issues"
+  },
+  "homepage": "https://github.com/iamstrawberry/website1#readme",
+  "dependencies": {
+    "@ashthornton/asscroll": "^2.0.11"
+  }
+}
