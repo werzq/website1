@@ -2,7 +2,7 @@
 
 <p>A basic yet useful guide for all that you need to know about <b>PrimParity</b></p>
 
-- ## What is **PrimParity**?
+## What is **PrimParity**?
 
 The core defination and name "PrimParity" comes from two words:<br>Primality and Parity.
 
