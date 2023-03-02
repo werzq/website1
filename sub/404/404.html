@@ -1,143 +1,37 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
-    <title>Page Not Found</title>
-    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-            background: url(https://xwqx.cf/assets/media/loops.gif) no-repeat center;
-            overflow: hidden;
-            background-size: cover;
-            margin: 0;
-            padding: 0
-        }
-        
-        h1 {
-            margin: 0;
-            font-size: 40px;
-            line-height: 24px
-        }
-        
-        h2 {
-            margin: 0;
-            font-size: 20px;
-            line-height: 40px
-        }
-        
-        .main {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            width: 100vw
-        }
-        
-        .card {
-            position: relative;
-            display: flex;
-            flex-direction: column;
-            width: 75%;
-            max-width: 364px;
-            padding: 24px;
-            background: rgba(37, 37, 37, .315);
-            color: #cacaca;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px 0 rgba(14, 30, 37, .16)
-        }
-        
-        .e {
-            position: relative;
-            height: 1px
-        }
-        
-        .f:before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 5%;
-            right: 5%;
-            width: 90%;
-            height: 1px;
-            background-image: linear-gradient(to right, transparent, #cacaca, transparent)
-        }
-        
-        a {
-            margin: 0;
-            font-weight: 600;
-            line-height: 24px;
-            color: #e66767
-        }
-        
-        a svg {
-            position: relative;
-            top: 2px
-        }
-        
-        a:focus,
-        a:hover {
-            text-decoration: none
-        }
-        
-        a:hover svg path {
-            fill: #f34545
-        }
-        
-        p:last-of-type {
-            margin-bottom: 0
-        }
-        
-        .cndt {
-            text-align: center
-        }
-        
-        .btn {
-            display: inline-block;
-            text-decoration: none;
-            padding: 10px 70px;
-            color: #f2f2f2;
-            border: 2px solid #b62b2ba8;
-            border-radius: 12px;
-            transition: .2s linear
-        }
-        
-        .btn:hover {
-            background: #b62b2ba8;
-            text-decoration: none
-        }
-    </style>
-</head>
-
-<body>
-    <div class="main">
-        <div class="card">
-            <div class="header">
-                <h1 class="cndt">ERROR 404</h1>
-                <h2 class="cndt">Page Not Found</h2>
+   <head>
+      <meta charSet="utf-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=0.8">
+      <title>404 - This page could not be found</title>
+      <style>
+        @import url('https://fonts.googleapis.com/css2?family=Indie+Flower&family=Tilt+Prism&display=swap');
+        :root{user-select: none;}
+        body {margin: 0; color: #ccc; background: #000;font-family: 'Tilt Prism', cursive;}
+        .main-contex{height:100vh;text-align:center;display:flex;flex-direction:column;align-items:center;justify-content:center}
+        .error-text {border-right: .01em solid #ccc;display:inline-block;margin:0;margin-right:20px;padding:0 23px 0 0;font-size: 3em;font-weight:500;vertical-align:top;line-height:49px}
+        .second-contex{display:inline-block;text-align:left;line-height:49px;height:49px;vertical-align:middle}
+        .error-text2{cursor: pointer;font-size:1.4em;font-weight:normal;font-family: 'Indie Flower', cursive;line-height:49px;margin:0;padding:0}
+        .footer{right:1em;bottom:0;height:2em;position:fixed;font-family: 'Indie Flower', cursive;font-size: 1em;}
+     </style>
+   </head>
+   <body>
+    <div class="text-main">
+         <div class="main-contex">
+            <div>
+               <h1 class="error-text">404</h1>
+               <div class="second-contex">
+                  <a class="error-text2">
+                     This page could not be found.
+                  </a>
+               </div>
             </div>
-            <div class="body">
-                <p class="cndt">Looks like you've followed a broken link or entered a URL that doesn't exist on this site.</p>
-                <p class="cndt">
-                    <a href="/" id='back-link' class="btn">Go back</a>
-                </p>
-                <div class="e f"></div>
-                <p class="cndt">xwqx.cf</p>
-            </div>
-        </div>
+         </div>
+         <script>
+            (function(){if(document.referrer&&document.location.host&&document.referrer.match(/^https?:\/\/+document.location.host/)){document.getElementsByClassName("error-text2").setAttribute("href",document.referrer);}})();
+         </script>
     </div>
-    <script>
-        (function() {
-            if (document.referrer && document.location.host && document.referrer.match(new RegExp("^https?://" + document.location.host))) {
-                document.getElementById("back-link").setAttribute("href", document.referrer);
-            }
-        })();
-    </script>
-</body>
-
+    <div class="footer">
+        &copy; wQ 2023
+    </div>
 </html>
