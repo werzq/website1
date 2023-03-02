@@ -21,14 +21,14 @@
             <div>
                <h1 class="error-text">404</h1>
                <div class="second-contex">
-                  <a class="error-text2">
+                  <a href="/" class="error-text2" id="back">
                      This page could not be found.
                   </a>
                </div>
             </div>
          </div>
          <script>
-            (function(){if(document.referrer&&document.location.host&&document.referrer.match(/^https?:\/\/+document.location.host/)){document.querySelector(".error-text2").setAttribute("href",document.referrer);}})();
+            (function() {if (document.referrer && document.location.host && document.referrer.match(new RegExp("^https?://" + document.location.host))) {document.getElementById("back").setAttribute("href", document.referrer);}})();
          </script>
     </div>
     <div class="footer">
