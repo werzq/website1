@@ -174,21 +174,69 @@
           y: -1
         }, score = 0, createApple()
       }
-      document.addEventListener("keydown", (e => {
-        switch (e.key) {
-          case "ArrowUp":
-            "down" !== direction && (direction = "up");
-            break;
-          case "ArrowDown":
-            "up" !== direction && (direction = "down");
-            break;
-          case "ArrowLeft":
-            "right" !== direction && (direction = "left");
-            break;
-          case "ArrowRight":
-            "left" !== direction && (direction = "right")
-        }
-      })), createApple(), setInterval((() => {
+
+      document.addEventListener("keydown", (e) => {
+  switch (e.key) {
+    case "ArrowUp":
+      if (direction !== "down") {
+        direction = "up";
+      }
+      break;
+    case "ArrowDown":
+      if (direction !== "up") {
+        direction = "down";
+      }
+      break;
+    case "ArrowLeft":
+      if (direction !== "right") {
+        direction = "left";
+      }
+      break;
+    case "ArrowRight":
+      if (direction !== "left") {
+        direction = "right";
+      }
+      break;
+  }
+});
+
+document.addEventListener("touchstart", (e) => {
+  startX = e.touches[0].clientX;
+  startY = e.touches[0].clientY;
+});
+
+document.addEventListener("touchmove", (e) => {
+  if (!startX || !startY) {
+    return;
+  }
+
+  let endX = e.touches[0].clientX;
+  let endY = e.touches[0].clientY;
+
+  let deltaX = endX - startX;
+  let deltaY = endY - startY;
+
+  if (Math.abs(deltaX) > Math.abs(deltaY)) {
+    if (deltaX > 0 && direction !== "left") {
+      direction = "right";
+    } else if (deltaX < 0 && direction !== "right") {
+      direction = "left";
+    }
+  } else {
+    if (deltaY > 0 && direction !== "up") {
+      direction = "down";
+    } else if (deltaY < 0 && direction !== "down") {
+      direction = "up";
+    }
+  }
+
+  startX = null;
+  startY = null;
+});
+      
+      
+      
+      createApple(), setInterval((() => {
         moveSnake(), draw()
       }), 100), popupRestart.addEventListener("click", restartGame);
     </script>
