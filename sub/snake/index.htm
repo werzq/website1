@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Snake Game</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap");
+
+      body {
+        user-select: none;
+        background-color: #111;
+        color: white;
+        font-family: sans-serif;
+        font-size: 18px;
+        text-align: center;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      canvas {
+        border: 0.69em solid #555;
+      }
+
+      #popup {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: #000000cb;
+      }
+
+      #popup-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+      }
+
+      #popup-message {
+        font-size: 24px;
+        margin-bottom: 20px;
+      }
+
+      #popup-restart {
+        padding: 10px 20px;
+        font-size: 18px;
+        background-color: #f44336;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      #popup-restart:hover {
+        background-color: #d32f2f;
+      }
+
+      .footr {
+        font-family: "Indie Flower", cursive;
+        right: 1em;
+        bottom: 0;
+        height: 2em;
+        position: fixed;
+        font-size: 1em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <canvas id="canvas" width="400" height="400"></canvas>
+    </div>
+    <div id="popup">
+      <div id="popup-content">
+        <p id="popup-message"></p>
+        <button id="popup-restart">Restart</button>
+      </div>
+    </div>
+    <div class="footr">&copy; wQ 2023</div>
+    <script>
+      const canvas = document.getElementById("canvas"),
+        ctx = canvas.getContext("2d"),
+        popup = document.getElementById("popup"),
+        popupMessage = document.getElementById("popup-message"),
+        popupRestart = document.getElementById("popup-restart"),
+        canvasWidth = 600,
+        canvasHeight = 600,
+        gridSize = 20;
+      canvas.width = 600, canvas.height = 600;
+      const gridWidth = 30,
+        gridHeight = 30;
+      let snake = [{
+          x: 10,
+          y: 10
+        }],
+        direction = "right",
+        apple = {
+          x: 0,
+          y: 0
+        },
+        score = 0;
+
+      function showPopup(e) {
+        popupMessage.innerText = e, popup.style.display = "flex"
+      }
+
+      function hidePopup() {
+        popup.style.display = "none"
+      }
+
+      function moveSnake() {
+        let e = {
+          x: snake[0].x,
+          y: snake[0].y
+        };
+        switch (direction) {
+          case "up":
+            e.y--;
+            break;
+          case "down":
+            e.y++;
+            break;
+          case "left":
+            e.x--;
+            break;
+          case "right":
+            e.x++
+        }
+        snake.unshift(e), handleCollisions()
+      }
+
+      function handleCollisions() {
+        if (snake[0].x < 0 || snake[0].x >= 30 || snake[0].y < 0 || snake[0].y >= 30) showPopup(`Game over! Score: ${score}`);
+        else {
+          for (let e = 1; e < snake.length; e++)
+            if (snake[e].x === snake[0].x && snake[e].y === snake[0].y) return void showPopup(`Game over! Score: ${score}`);
+          snake[0].x === apple.x && snake[0].y === apple.y ? (apple = {
+            x: -1,
+            y: -1
+          }, score++, createApple()) : snake.pop()
+        }
+      }
+
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height), ctx.fillStyle = "green";
+        for (let e = 0; e < snake.length; e++) ctx.fillRect(20 * snake[e].x, 20 * snake[e].y, 20, 20);
+        ctx.fillStyle = "red", ctx.fillRect(20 * apple.x, 20 * apple.y, 20, 20), ctx.fillStyle = "#555", ctx.font = "20px Arial", ctx.fillText(`Score: ${score}`, 10, 30)
+      }
+
+      function createApple() {
+        for (; - 1 === apple.x || -1 === apple.y;) {
+          apple.x = Math.floor(30 * Math.random()), apple.y = Math.floor(30 * Math.random());
+          for (let e = 0; e < snake.length; e++)
+            if (snake[e].x === apple.x && snake[e].y === apple.y) {
+              apple.x = -1, apple.y = -1;
+              break
+            }
+        }
+      }
+
+      function restartGame() {
+        hidePopup(), snake = [{
+          x: 10,
+          y: 10
+        }], direction = "right", apple = {
+          x: -1,
+          y: -1
+        }, score = 0, createApple()
+      }
+      document.addEventListener("keydown", (e => {
+        switch (e.key) {
+          case "ArrowUp":
+            "down" !== direction && (direction = "up");
+            break;
+          case "ArrowDown":
+            "up" !== direction && (direction = "down");
+            break;
+          case "ArrowLeft":
+            "right" !== direction && (direction = "left");
+            break;
+          case "ArrowRight":
+            "left" !== direction && (direction = "right")
+        }
+      })), createApple(), setInterval((() => {
+        moveSnake(), draw()
+      }), 100), popupRestart.addEventListener("click", restartGame);
+    </script>
+  </body>
+</html>
