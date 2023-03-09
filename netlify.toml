@@ -1,6 +1,6 @@
 [[redirects]]
   from = "/api"
-  to = "http://willi-api.great-site.net/index.php"
+  to = "https://wqfiles.000webhostapp.com/williapi"
   status = 200
   force = true
   signed = "API_SIGNATURE_TOKEN"
