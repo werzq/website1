@@ -4,10 +4,3 @@
   status = 200
   force = true
   signed = "API_SIGNATURE_TOKEN"
-
-[[redirects]]
-  from = "/favicon.ico"
-  to = "https://wqfiles.000webhostapp.com/williapi/favicon.ico"
-  status = 200
-  force = true
-  signed = "API_SIGNATURE_TOKEN"
