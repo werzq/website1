@@ -3,4 +3,3 @@
   to = "https://willi-api.great-site.net/"
   status = 200
   force = true
-  headers = {Content-Type = "image/jpeg"}
