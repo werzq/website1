@@ -4,9 +4,3 @@
   status = 200
   force = true
   signed = "API_SIGNATURE_TOKEN"
-
-[[redirects]]
-  from = "/api/willi-got/"
-  to = "https://wqfiles.000webhostapp.com/williapi/willi-got/index.php"
-  status = 200
-  force = true
