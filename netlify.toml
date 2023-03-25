@@ -4,3 +4,10 @@
   status = 200
   force = true
   signed = "API_SIGNATURE_TOKEN"
+
+[[redirects]]
+  from = "/api/json/"
+  to = "https://xwqx.000webhostapp.com/willi-api-json"
+  status = 200
+  force = true
+  signed = "API_SIGNATURE_TOKEN"
