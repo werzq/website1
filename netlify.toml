@@ -7,3 +7,13 @@
   from = "/rendr"
   to = "sub/rendr.html"
   status = 200
+
+[[redirects]]
+  from = "/rendr"
+  to = "sub/rendr.html"
+  status = 200
+
+[[redirects]]
+  from = "/test"
+  to = "https://xwqx.000webhostapp.com/test/"
+  status = 200
