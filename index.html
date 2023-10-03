@@ -1,18 +1,467 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Redirector 3000&trade;</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Rubik:300,500,700" rel="stylesheet">
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>DPS-wifi</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="shortcut icon" href="./assets/media/logo.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v6.0.0-beta3/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Rubik:300,500,700" rel="stylesheet" />
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+         ::selection {
+            color: none;
+        }
+        
+        body {
+            font-family: Rubik, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: calc(10px + .33vw);
+            -webkit-font-smoothing: antialiased;
+            background-color: #000;
+            transition: .5s linear;
+            -webkit-transition: 0.5s linear;
+            -moz-transition: 0.5s linear;
+            -ms-transition: 0.5s linear;
+            -o-transition: 0.5s linear;
+            color: #ccc;
+            background-image: url(./assets/media/pattern.svg)
+        }
+        
+        body h4 {
+            background-color: #272727d3;
+            border-color: #000;
+            transition: .5s linear;
+            -webkit-transition: 0.5s linear;
+            -moz-transition: 0.5s linear;
+            -ms-transition: 0.5s linear;
+            -o-transition: 0.5s linear;
+            font-family: Arial;
+            border-style: solid;
+            color: #aaa;
+            position: fixed;
+            padding: 5px;
+            bottom: 0;
+            cursor: pointer
+        }
+        
+        body h4:hover {
+            transition: .5s linear;
+            -webkit-transition: 0.5s linear;
+            -moz-transition: 0.5s linear;
+            -ms-transition: 0.5s linear;
+            -o-transition: 0.5s linear;
+            text-shadow: 0 0 15px #aaa;
+            color: #fff
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        .context-menu {
+            position: absolute;
+        }
+        
+        .menu {
+            display: flex;
+            flex-direction: column;
+            background-color: #222222cc;
+            backdrop-filter: blur(2px);
+            cursor: pointer;
+            border-style: solid;
+            border-color: #222222;
+            border-radius: 10px;
+            box-shadow: 0 10px 20px rgb(64 64 64 / 5%);
+            padding: 10px 0;
+        }
+        
+        .menu>li>a {
+            font: inherit;
+            border: 0;
+            padding: 10px 30px 10px 15px;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            position: relative;
+            text-decoration: unset;
+            border-radius: 5px;
+            color: #cccc;
+            font-weight: 500;
+            transition: 0.1s linear;
+            -webkit-transition: 0.1s linear;
+            -moz-transition: 0.1s linear;
+            -ms-transition: 0.1s linear;
+            -o-transition: 0.1s linear;
+        }
+        
+        .menu>li>a:hover {
+            background: #464646;
+            color: #e4e4e4;
+        }
+        
+        .menu>li>a>i {
+            padding-right: 10px;
+        }
+        
+        .dtog {
+            position: fixed;
+            cursor: pointer;
+            top: 0;
+            right: 15px
+        }
+        
+        .dark-mode {
+            transition: .5s linear;
+            -webkit-transition: 0.5s linear;
+            -moz-transition: 0.5s linear;
+            -ms-transition: 0.5s linear;
+            -o-transition: 0.5s linear;
+            background-color: #8f8f8f;
+            color: #333
+        }
+        
+        .dark-mode .menu {
+            display: flex;
+            flex-direction: column;
+            background-color: #a7a7a799;
+            backdrop-filter: blur(2px);
+            cursor: pointer;
+            border-style: solid;
+            border-color: #a7a7a7;
+            border-radius: 10px;
+            padding: 10px 0;
+        }
+        
+        .dark-mode .menu>li>a {
+            border-radius: 5px;
+            color: #222222;
+        }
+        
+        .dark-mode .menu>li>a:hover {
+            background: #bbbbbbcc;
+            color: #333333;
+        }
+        
+        .dark-mode h4 {
+            transition: .5s linear;
+            -webkit-transition: 0.5s linear;
+            -moz-transition: 0.5s linear;
+            -ms-transition: 0.5s linear;
+            -o-transition: 0.5s linear;
+            border-color: #3d3d3daf;
+            background-color: #ccc;
+            color: #333
+        }
+        
+        .dark-mode h4:hover {
+            transition: .5s linear;
+            -webkit-transition: 0.5s linear;
+            -moz-transition: 0.5s linear;
+            -ms-transition: 0.5s linear;
+            -o-transition: 0.5s linear;
+            text-shadow: 0 0 15px #313131;
+            color: #0f0f0f
+        }
+        
+        .y {
+            transition: .2s linear;
+            -webkit-transition: 0.2s linear;
+            -moz-transition: 0.2s linear;
+            -ms-transition: 0.2s linear;
+            -o-transition: 0.2s linear;
+            color: #ff0
+        }
+        
+        .y:hover {
+            text-shadow: 0 0 15px #fe0
+        }
+        
+        .x {
+            transition: .2s linear;
+            -webkit-transition: 0.2s linear;
+            -moz-transition: 0.2s linear;
+            -ms-transition: 0.2s linear;
+            -o-transition: 0.2s linear;
+            color: #a0cbd1
+        }
+        
+        .x:hover {
+            text-shadow: 0 0 15px #5da1aa
+        }
+        
+        a {
+            transition: .5s linear;
+            -webkit-transition: 0.5s linear;
+            -moz-transition: 0.5s linear;
+            -ms-transition: 0.5s linear;
+            -o-transition: 0.5s linear;
+            text-decoration: none;
+            margin: 0;
+            font-weight: 600;
+            line-height: 24px;
+            color: #cccccc;
+        }
+        
+        a:hover,
+        a:focus {
+            transition: .2s linear;
+            -webkit-transition: 0.2s linear;
+            -moz-transition: 0.2s linear;
+            -ms-transition: 0.2s linear;
+            -o-transition: 0.2s linear;
+            text-decoration: none;
+            color: #727272;
+        }
+        
+        .dark-mode a {
+            transition: .5s linear;
+            -webkit-transition: 0.5s linear;
+            -moz-transition: 0.5s linear;
+            -ms-transition: 0.5s linear;
+            -o-transition: 0.5s linear;
+            text-decoration: none;
+            margin: 0;
+            font-weight: 600;
+            line-height: 24px;
+            color: #333333;
+        }
+        
+        .dark-mode a:hover,
+        .dark-mode a:focus {
+            transition: .2s linear;
+            -webkit-transition: 0.2s linear;
+            -moz-transition: 0.2s linear;
+            -ms-transition: 0.2s linear;
+            -o-transition: 0.2s linear;
+            text-decoration: none;
+            color: #666666;
+        }
+        
+        .updte {
+            transition: .5s linear;
+            -webkit-transition: 0.5s linear;
+            -moz-transition: 0.5s linear;
+            -ms-transition: 0.5s linear;
+            -o-transition: 0.5s linear;
+            color: #ff7c7c;
+        }
+        
+        .dark-mode .updte {
+            transition: .5s linear;
+            -webkit-transition: 0.5s linear;
+            -moz-transition: 0.5s linear;
+            -ms-transition: 0.5s linear;
+            -o-transition: 0.5s linear;
+            color: #ff5c5c;
+        }
+        
+        .stts {
+            transition: .5s linear;
+            -webkit-transition: 0.5s linear;
+            -moz-transition: 0.5s linear;
+            -ms-transition: 0.5s linear;
+            -o-transition: 0.5s linear;
+            color: #9bff7c;
+        }
+        
+        .dark-mode .stts {
+            transition: .5s linear;
+            -webkit-transition: 0.5s linear;
+            -moz-transition: 0.5s linear;
+            -ms-transition: 0.5s linear;
+            -o-transition: 0.5s linear;
+            color: #23a000;
+        }
+        
+        .clink {
+            transition: .5s linear;
+            -webkit-transition: 0.5s linear;
+            -moz-transition: 0.5s linear;
+            -ms-transition: 0.5s linear;
+            -o-transition: 0.5s linear;
+            color: #a0a0a0;
+        }
+        
+        .clink:hover,
+        .clink:focus {
+            transition: .5s linear;
+            -webkit-transition: 0.5s linear;
+            -moz-transition: 0.5s linear;
+            -ms-transition: 0.5s linear;
+            -o-transition: 0.5s linear;
+            text-shadow: 0 0 5px #e9e9e9;
+            cursor: pointer;
+            color: #c9c9c9;
+        }
+        
+        .dark-mode .clink {
+            transition: .5s linear;
+            -webkit-transition: 0.5s linear;
+            -moz-transition: 0.5s linear;
+            -ms-transition: 0.5s linear;
+            -o-transition: 0.5s linear;
+            color: #4d4d4d;
+        }
+        
+        .dark-mode .clink:hover,
+        .dark-mode .clink:focus {
+            transition: .5s linear;
+            -webkit-transition: 0.5s linear;
+            -moz-transition: 0.5s linear;
+            -ms-transition: 0.5s linear;
+            -o-transition: 0.5s linear;
+            text-shadow: 0 0 5px #1b1b1b;
+            cursor: pointer;
+            color: #2b2b2b;
+        }
+        
+        .loader {
+            position: fixed;
+            z-index: 99;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center
+        }
+        
+        .loader.hidden {
+            animation: fadeOut 1s;
+            animation-fill-mode: forwards
+        }
+        
+        @keyframes fadeOut {
+            100% {
+                opacity: 0;
+                visibility: hidden
+            }
+        }
+    </style>
 </head>
 
-<body><noscript>no js plz enabl</noscript>
-    <h3 id="title"></h3>
+<body>
+
+    <!--Loader-->
+    <div class="loader">
+        <h1 style="font-size: 4em;font-weight: 500;"><i class="fa-duotone fa-gear fa-spin"></i> Loading...</h1>
+    </div>
+    <!--/Loader-->
+
+    <!--Darkmode-->
+    <div onclick="darkmode()" class="dtog">
+        <p id="dinfo">
+            <a id="dmxy"></a>
+        </p>
+    </div>
+    <!--/Darkmode-->
+
+    <!--Content-->
+
+    <p style="font-size: 2em;font-weight: 300;line-height: 1.4;max-width: 50em;text-align: justify;"><b>SSID: </b>DPS-MIS-Staff2023<br><b>Password: </b>Te@cherDpS@2K23 <i class="fa fa-link fa-xs clink" onclick="copyPass()"></i><br><b>Updated: </b><b class="updte">01/10/2023</b><br><b>Status: </b><b class="stts">verified&trade;</b></p>
+    <hr>
+    <p style="font-size: 1em;font-weight: 300;line-height: 1.4;text-align: justify;"><b>Details for weirdos: </b><br>geb. etx: 34099d8a9b956d63ca226<br>Authentication: WPA2-Personal<br>is MAC rand. enabled: false<br>vend. ext: false<br>Cipher: CCMP</p>
+    <hr>
+    <a id="back-link" href="/">Go Back</a>
+
+    <!--/Content-->
+
+    <!--Footer-->
+    <h4 onclick="brprop()"> © 2022 wQ </h4>
+
+    <div id="contextMenu" class="context-menu" style="display: none">
+        <ul class="menu">
+            <li class="opimg" onclick="imglink()"><a><i class="fa fa-share" aria-hidden="true"></i> Open image in new tab</a></li>
+            <li class="pagesrc" onclick="Vwsrc()"><a><i class="fa fa-code" aria-hidden="true"></i> View page source</a></li>
+            <li class="imglink" onclick="copyImglnk()"><a><i class="fa fa-link" aria-hidden="true"></i> Copy image link</a></li>
+            <li class="pagereload" onclick="reLoadwindow()"><a><i class="fa fa-rotate-right" aria-hidden="true"></i> Reload page</a></li>
+            <li class="beta" onclick="betaTst()"><a><i class="fa fa-triangle-exclamation" aria-hidden="true"></i> Beta</a></li>
+        </ul>
+    </div>
+    <!--/Footer-->
+
+
+
+    <script>
+        var user = getCookie("darkm"),
+            estxx = 1,
+            lxy = '<i class="fa-regular fa-moon x fa-2x fa-spin fa-spin-reverse" style="--fa-animation-duration: 0.5s; --fa-animation-iteration-count: 1;"></i>',
+            dxy = '<i class="fa-regular fa-brightness y fa-2x fa-spin" style="--fa-animation-duration: 0.5s; --fa-animation-iteration-count: 1;"></i>';
+
+        function brprop() {
+            alert("© 2022 wQ\n\nYou are free to:\nShare — copy and redistribute the material in any medium or format for any purpose, even commercially.\n\nUnder the following terms:\nAttribution — You must give appropriate credit and indicate if changes were made. You may do so in any reasonable manner.\nNoDerivatives — If you remix, transform, or build upon the material, you may not distribute the modified material. ")
+        }
+
+        function darkmode() {
+            var e = document.body,
+                t = document.getElementById("dinfo");
+            t.innerHTML === dxy ? (t.innerHTML = lxy, setCookie("darkm", "0", 500), e.classList.toggle("dark-mode")) : (t.innerHTML = dxy, setCookie("darkm", "1", 500), e.classList.toggle("dark-mode")), estxx < 20 ? estxx++ : 1 == confirm("It seems that you:\n• are trying to break the site\n• Are a Bot\n\nPlease confirm that you are not a bot by selecting cancel.") ? (alert("Stupid bot"), window.open("https://www.youtube.com/watch?v=GJDNkVDGM_s"), location.reload()) : (alert("Looks like you were just trying to break the page\nWell nice try!\n\n\nRefreshing..."), location.reload())
+        }
+
+        function setCookie(e, t, n) {
+            const o = new Date;
+            o.setTime(o.getTime() + 24 * n * 60 * 60 * 1e3);
+            let a = "expires=" + o.toUTCString();
+            document.cookie = e + "=" + t + ";" + a + ";path=/"
+        }
+
+        function getCookie(e) {
+            let t = e + "=",
+                n = decodeURIComponent(document.cookie).split(";");
+            for (let e = 0; e < n.length; e++) {
+                let o = n[e];
+                for (;
+                    " " == o.charAt(0);) o = o.substring(1);
+                if (0 == o.indexOf(t)) return o.substring(t.length, o.length)
+            }
+            return ""
+        }
+
+        function copyPass() {
+            navigator.clipboard.writeText('Te@cherDpS@twoK23');
+            alert('Copied to Clipboard!\nEnjoy ;)');
+        }
+
+        function reLoadwindow() {
+            location.reload()
+        }
+
+        function imglink() {
+            window.open("./assets/media/pattern.svg", "_blank")
+        }
+
+        function copyImglnk() {
+            navigator.clipboard.writeText("./assets/media/pattern.svg")
+        }
+
+        function Vwsrc() {
+            var e = "<html>";
+            e += document.getElementsByTagName("html")[0].innerHTML, e = "<pre>" + (e = (e += "</html>").replace(/</g, "&lt;").replace(/>/g, "&gt;")) + "</pre>", sourceWindow = window.open("", "Source of page", "height=800,width=800,scrollbars=1,resizable=1"), sourceWindow.document.write("<style>body{background-color:#fff;background-image:url(./assets/media/pattern2.svg);color:#000}.txwhf{text-align:center}</style><h3 class=txwhf>https://kamraan.cf</h3><h6 class=txwhf>© 2022 wQ</h6><hr>" + e), sourceWindow.document.close(), window.focus && sourceWindow.focus()
+        }
+
+        function hideMenu() {
+            document.getElementById("contextMenu").style.display = "none"
+        }
+
+        function rightClick(e) {
+            if (e.preventDefault(), "block" == document.getElementById("contextMenu").style.display) hideMenu();
+            else {
+                var t = document.getElementById("contextMenu");
+                t.style.display = "block", t.style.left = e.pageX + "px", t.style.top = e.pageY + "px"
+            }
+        }
+        document.getElementById("dmxy").innerHTML = lxy, "1" === user ? darkmode() : setCookie("darkm", "0", 500), document.onclick = hideMenu, document.oncontextmenu = rightClick, window.addEventListener("load", (function() {
+            document.querySelector(".loader").className += " hidden"
+        }));
+    </script>
 </body>
 
 </html>

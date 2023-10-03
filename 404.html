@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Page Not Found</title>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+            background-color: #333333;
+            color: #cccccc;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='%23ffffff' fill-opacity='0.13'%3E%3Cpath fill-rule='evenodd' d='M0 0h40v40H0V0zm40 40h40v40H40V40zm0-40h2l-2 2V0zm0 4l4-4h2l-6 6V4zm0 4l8-8h2L40 10V8zm0 4L52 0h2L40 14v-2zm0 4L56 0h2L40 18v-2zm0 4L60 0h2L40 22v-2zm0 4L64 0h2L40 26v-2zm0 4L68 0h2L40 30v-2zm0 4L72 0h2L40 34v-2zm0 4L76 0h2L40 38v-2zm0 4L80 0v2L42 40h-2zm4 0L80 4v2L46 40h-2zm4 0L80 8v2L50 40h-2zm4 0l28-28v2L54 40h-2zm4 0l24-24v2L58 40h-2zm4 0l20-20v2L62 40h-2zm4 0l16-16v2L66 40h-2zm4 0l12-12v2L70 40h-2zm4 0l8-8v2l-6 6h-2zm4 0l4-4v2l-2 2h-2z'/%3E%3C/g%3E%3C/svg%3E");
+            overflow: hidden;
+            margin: 0;
+            padding: 0;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 22px;
+            line-height: 24px;
+        }
+        
+        .main {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100vw;
+        }
+        
+        .center {
+            text-align: center;
+        }
+        
+        .card {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            width: 75%;
+            max-width: 364px;
+            padding: 24px;
+            color: #cccccc;
+            border-radius: 8px;
+            background-color: #333333a3;
+            box-shadow: 0 2px 4px 0 rgba(14, 30, 37, .16);
+        }
+        
+        a {
+            text-decoration: none;
+            margin: 0;
+            font-weight: 600;
+            line-height: 24px;
+            color: #cccccc;
+        }
+        
+        a:hover,
+        a:focus {
+            transition: .2s linear;
+            text-decoration: none;
+            color: #727272;
+        }
+        
+        p:last-of-type {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="card">
+            <div class="header center">
+                <h1>Page Not Found</h1>
+            </div>
+            <div class="body" style="text-align:justify">
+                <p>Looks like you've followed a broken link or entered a URL that doesn't exist on this site.</p>
+                <p class="center">
+                    <a id="dte"></a>
+                </p>
+                <p class="center">
+                    <a id="back-link" href="/">Go Back</a>
+                </p>
+                <hr>
+                <p class="center">kamraan.cf</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        (function() {
+            if (document.referrer && document.location.host && document.referrer.match(new RegExp("^https?://" + document.location.host))) {
+                document.getElementById("back-link").setAttribute("href", document.referrer);
+            }
+        })();
+        const date = new Date;
+        let day = date.getDate(),
+            month = date.getMonth() + 1,
+            year = date.getFullYear(),
+            t = date.getTime();
+
+        function xb(e) {
+            var a = e.getHours(),
+                n = e.getMinutes(),
+                r = a >= 12 ? "pm" : "am";
+            return a %= 12, (a = a || 12) + ":" + (n = n < 10 ? "0" + n : n) + " " + r
+        }
+        let currentDate = `${t}-${day}-${month}-${year}-${xb(new Date)}`;
+        document.getElementById("dte").innerHTML = currentDate;
+    </script>
+</body>
+
+</html>
